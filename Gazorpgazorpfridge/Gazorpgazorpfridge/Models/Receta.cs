@@ -7,10 +7,5 @@ namespace Gazorpgazorpfridge.Models
 {
     public class Receta
     {
-        public int id { get; set; }
-
-        public virtual ICollection<Producto> productos { get; set; }
-
-        public string descripcion { get; set; }
     }
 }
