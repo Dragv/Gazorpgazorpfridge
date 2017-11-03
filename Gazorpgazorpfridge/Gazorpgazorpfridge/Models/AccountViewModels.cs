@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Gazorpazorfridge.Models
+namespace Gazorpgazorpfridge.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

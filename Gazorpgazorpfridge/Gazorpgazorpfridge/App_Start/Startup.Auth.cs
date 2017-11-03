@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Gazorpazorfridge.Models;
+using Gazorpgazorpfridge.Models;
 
-namespace Gazorpazorfridge
+namespace Gazorpgazorpfridge
 {
     public partial class Startup
     {

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Gazorpazorfridge
+namespace Gazorpgazorpfridge
 {
     public class BundleConfig
     {

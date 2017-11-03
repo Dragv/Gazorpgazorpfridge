@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Gazorpazorfridge.Models;
+using Gazorpgazorpfridge.Models;
 
-namespace Gazorpazorfridge.Controllers
+namespace Gazorpgazorpfridge.Controllers
 {
     [Authorize]
     public class ManageController : Controller

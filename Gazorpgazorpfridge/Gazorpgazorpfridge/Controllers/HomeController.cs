@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Gazorpazorfridge.Controllers
+namespace Gazorpgazorpfridge.Controllers
 {
     public class HomeController : Controller
     {
