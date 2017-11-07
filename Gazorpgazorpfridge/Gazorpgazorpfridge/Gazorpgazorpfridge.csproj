@@ -195,6 +195,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711031808013_InitialCreate.cs" />
+    <Compile Include="Migrations\201711031808013_InitialCreate.Designer.cs">
+      <DependentUpon>201711031808013_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071534346_ModelChanges.cs" />
+    <Compile Include="Migrations\201711071534346_ModelChanges.Designer.cs">
+      <DependentUpon>201711071534346_ModelChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CanastaBasica.cs" />
@@ -265,6 +274,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\RegisterAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -281,6 +291,14 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711031808013_InitialCreate.resx">
+      <DependentUpon>201711031808013_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071534346_ModelChanges.resx">
+      <DependentUpon>201711071534346_ModelChanges.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

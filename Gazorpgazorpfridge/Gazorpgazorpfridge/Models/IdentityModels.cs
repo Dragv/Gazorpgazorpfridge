@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Gazorpgazorpfridge.Migrations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Gazorpgazorpfridge.Models
 {
@@ -16,6 +18,11 @@ namespace Gazorpgazorpfridge.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        [Display(Name = "Nombre")]
+        public string name { get; set; }
+
+        public Receta canastaBasica { set; get; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +36,19 @@ namespace Gazorpgazorpfridge.Models
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public IDbSet<CanastaBasica> CanastasBasicas { get; set; }
+        public IDbSet<Modelo> Modelos { get; set; }
+        public IDbSet<Paquete> Paquetes { get; set; }
+        public IDbSet<Producto> Productos { get; set; }
+        public IDbSet<Receta> Recetas { get; set; }
+        public IDbSet<Refrigerador> Refrigeradores{ get; set; }
+
     }
 }

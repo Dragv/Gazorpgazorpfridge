@@ -7,6 +7,7 @@ namespace Gazorpgazorpfridge.Models
 {
     public class Refrigerador
     {
+        public int id { get; set; }
         public string codigo { get; set; }
         public IEnumerable<Producto> productosAlamcenados { get; set; }
         public int capacidad { get; set; }

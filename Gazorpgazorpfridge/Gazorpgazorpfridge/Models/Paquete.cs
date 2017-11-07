@@ -16,5 +16,6 @@ namespace Gazorpgazorpfridge.Models
 
         [ForeignKey("Producto")]
         public int productId { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }

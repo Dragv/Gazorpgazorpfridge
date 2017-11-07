@@ -69,3 +69,6 @@ C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfri
 C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.csproj.CoreCompileInputs.cache
 C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.dll
 C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.pdb
+C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.Migrations.InitialCreate.resources
+C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.csproj.GenerateResource.Cache
+C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.Migrations.ModelChanges.resources
