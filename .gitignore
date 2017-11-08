@@ -1,6 +1,25 @@
-
 Gazorpgazorpfridge/\.vs/Gazorpgazorpfridge/v15/Server/sqlite3/storage\.ide-shm
 
 Gazorpgazorpfridge/\.vs/Gazorpgazorpfridge/v15/Server/sqlite3/storage\.ide-wal
 
 Gazorpgazorpfridge/\.vs/Gazorpgazorpfridge/v15/\.suo
+
+*.mdf
+
+*.suo
+
+*.ide-shm
+
+*.ide-wal
+
+Gazorpgazorpfridge/Gazorpgazorpfridge/App_Data/
+
+Gazorpgazorpfridge/\.vs/Gazorpgazorpfridge/v15/
+
+Gazorpgazorpfridge/Gazorpgazorpfridge/bin/Gazorpgazorpfridge\.dll
+
+Gazorpgazorpfridge/Gazorpgazorpfridge/bin/Gazorpgazorpfridge\.pdb
+
+Gazorpgazorpfridge/Gazorpgazorpfridge/obj/Debug/Gazorpgazorpfridge\.dll
+
+Gazorpgazorpfridge/Gazorpgazorpfridge/obj/Debug/Gazorpgazorpfridge\.pdb
