@@ -50,5 +50,8 @@ namespace Gazorpgazorpfridge.Models
         public IDbSet<Receta> Recetas { get; set; }
         public IDbSet<Refrigerador> Refrigeradores{ get; set; }
 
+        public System.Data.Entity.DbSet<Gazorpgazorpfridge.Models.Refrigerador> Refrigeradors { get; set; }
+
+        public System.Data.Entity.DbSet<Gazorpgazorpfridge.Models.Producto> Productoes { get; set; }
     }
 }
