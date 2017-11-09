@@ -72,3 +72,6 @@ C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfri
 C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.csproj.CoreCompileInputs.cache
 C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.dll
 C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.pdb
+C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.Migrations.Fixed_database.resources
+C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.Migrations.changed_tables_names.resources
+C:\Users\ale_g\Desktop\AMS\Gazorpgazorpfridge\Gazorpgazorpfridge\Gazorpgazorpfridge\obj\Debug\Gazorpgazorpfridge.Migrations.last_fix_hopefully.resources

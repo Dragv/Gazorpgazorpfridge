@@ -192,8 +192,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProductoController.cs" />
-    <Compile Include="Controllers\RefrigeradorsController.cs" />
+    <Compile Include="Controllers\ModelosController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -205,8 +205,19 @@
     <Compile Include="Migrations\201711071534346_ModelChanges.Designer.cs">
       <DependentUpon>201711071534346_ModelChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711091657582_Fixed_database.cs" />
+    <Compile Include="Migrations\201711091657582_Fixed_database.Designer.cs">
+      <DependentUpon>201711091657582_Fixed_database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711091707020_changed_tables_names.cs" />
+    <Compile Include="Migrations\201711091707020_changed_tables_names.Designer.cs">
+      <DependentUpon>201711091707020_changed_tables_names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711091716385_last_fix_hopefully.cs" />
+    <Compile Include="Migrations\201711091716385_last_fix_hopefully.Designer.cs">
+      <DependentUpon>201711091716385_last_fix_hopefully.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CanastaBasica.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -279,16 +290,16 @@
     <Content Include="Views\Account\RegisterAdmin.cshtml" />
     <Content Include="Views\Home\IndexPartials\_IndexUser.cshtml" />
     <Content Include="Views\Home\IndexPartials\_IndexAdmin.cshtml" />
-    <Content Include="Views\Refrigeradors\Create.cshtml" />
-    <Content Include="Views\Refrigeradors\Delete.cshtml" />
-    <Content Include="Views\Refrigeradors\Details.cshtml" />
-    <Content Include="Views\Refrigeradors\Edit.cshtml" />
-    <Content Include="Views\Refrigeradors\Index.cshtml" />
-    <Content Include="Views\Producto\Create.cshtml" />
-    <Content Include="Views\Producto\Delete.cshtml" />
-    <Content Include="Views\Producto\Details.cshtml" />
-    <Content Include="Views\Producto\Edit.cshtml" />
-    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Productos\Create.cshtml" />
+    <Content Include="Views\Productos\Delete.cshtml" />
+    <Content Include="Views\Productos\Details.cshtml" />
+    <Content Include="Views\Productos\Edit.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Modelos\Create.cshtml" />
+    <Content Include="Views\Modelos\Delete.cshtml" />
+    <Content Include="Views\Modelos\Details.cshtml" />
+    <Content Include="Views\Modelos\Edit.cshtml" />
+    <Content Include="Views\Modelos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -312,6 +323,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711071534346_ModelChanges.resx">
       <DependentUpon>201711071534346_ModelChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711091657582_Fixed_database.resx">
+      <DependentUpon>201711091657582_Fixed_database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711091707020_changed_tables_names.resx">
+      <DependentUpon>201711091707020_changed_tables_names.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711091716385_last_fix_hopefully.resx">
+      <DependentUpon>201711091716385_last_fix_hopefully.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
