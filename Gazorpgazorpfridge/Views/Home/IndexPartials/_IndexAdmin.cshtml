@@ -1,0 +1,98 @@
+﻿@model Gazorpgazorpfridge.Models.AdminViewModel
+
+@{
+    ViewBag.Title = "Home Page For Admin";
+}
+
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-6">
+        <p>
+            @Html.ActionLink("Create New", "Create", "Modelos")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.modelos.FirstOrDefault().codigo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.modelos.FirstOrDefault().capacidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.modelos.FirstOrDefault().indiceEnfriamiento)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.modelos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codigo)
+                    </td>
+                    <td>x
+                        @Html.DisplayFor(modelItem => item.capacidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.indiceEnfriamiento)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Modelos", new { id = item.id }, null) |
+                        @Html.ActionLink("Details", "Details", "Modelos", new { id = item.id }, null) |
+                        @Html.ActionLink("Delete", "Delete", "Modelos", new { id = item.id }, null)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+    <div class="col-md-6">
+        <p>
+            @Html.ActionLink("Create New", "Create", "Productos")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.productos.FirstOrDefault().codigo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.productos.FirstOrDefault().nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.productos.FirstOrDefault().espacioVol)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.productos.FirstOrDefault().medida)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.productos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.espacioVol)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.medida)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Productos", new { id = item.id }, null) |
+                        @Html.ActionLink("Details", "Details", "Productos", new { id = item.id }, null) |
+                        @Html.ActionLink("Delete", "Delete", "Productos", new { id = item.id }, null)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
