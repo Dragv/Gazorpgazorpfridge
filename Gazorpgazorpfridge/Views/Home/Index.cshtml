@@ -1,9 +1,0 @@
-﻿
-@if (User.IsInRole("Admin"))
-{
-    @Html.Partial("IndexPartials/_IndexAdmin")
-}
-else if (User.IsInRole("User"))
-{
-    @Html.Partial("IndexPartials/_IndexUser")
-}
