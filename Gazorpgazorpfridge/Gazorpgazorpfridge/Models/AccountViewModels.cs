@@ -106,6 +106,10 @@ namespace Gazorpgazorpfridge.Models
         [Display(Name = "Nombre")]
         public string name { get; set; }
 
+        [Required]
+        [StringLength(12, ErrorMessage = "The {0} must have {2} characters long.", MinimumLength = 12)]
+        [Display(Name = "Frige code")]
+        public string FridgeCode { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -8,6 +8,7 @@ namespace Gazorpgazorpfridge.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
         public ActionResult Index()
         {
             return View();
@@ -15,14 +16,14 @@ namespace Gazorpgazorpfridge.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "A virtual Smart Fridge simulator that will help you to organize your food.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "";
 
             return View();
         }
