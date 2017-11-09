@@ -217,8 +217,13 @@
     <Compile Include="Migrations\201711091716385_last_fix_hopefully.Designer.cs">
       <DependentUpon>201711091716385_last_fix_hopefully.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711091826289_misterious_migration.cs" />
+    <Compile Include="Migrations\201711091826289_misterious_migration.Designer.cs">
+      <DependentUpon>201711091826289_misterious_migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\CanastaBasica.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -332,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711091716385_last_fix_hopefully.resx">
       <DependentUpon>201711091716385_last_fix_hopefully.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711091826289_misterious_migration.resx">
+      <DependentUpon>201711091826289_misterious_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

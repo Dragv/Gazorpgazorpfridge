@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gazorpgazorpfridge.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,17 @@ namespace Gazorpgazorpfridge.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         [Authorize]
         public ActionResult Index()
         {
-            return View();
+            var toReturn = new AdminViewModel
+            {
+                modelos = db.Modelos.ToList(),
+                productos = db.Productos.ToList()
+            };
+            return View(toReturn);
         }
 
         public ActionResult About()
