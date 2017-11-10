@@ -194,6 +194,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModelosController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\RecetasController.cs" />
+    <Compile Include="Controllers\RefrigeradoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,6 +222,10 @@
     <Compile Include="Migrations\201711091826289_misterious_migration.cs" />
     <Compile Include="Migrations\201711091826289_misterious_migration.Designer.cs">
       <DependentUpon>201711091826289_misterious_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711100048008_Refri_changes.cs" />
+    <Compile Include="Migrations\201711100048008_Refri_changes.Designer.cs">
+      <DependentUpon>201711100048008_Refri_changes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -305,6 +311,16 @@
     <Content Include="Views\Modelos\Details.cshtml" />
     <Content Include="Views\Modelos\Edit.cshtml" />
     <Content Include="Views\Modelos\Index.cshtml" />
+    <Content Include="Views\Refrigeradores\Create.cshtml" />
+    <Content Include="Views\Refrigeradores\Delete.cshtml" />
+    <Content Include="Views\Refrigeradores\Details.cshtml" />
+    <Content Include="Views\Refrigeradores\Edit.cshtml" />
+    <Content Include="Views\Refrigeradores\Index.cshtml" />
+    <Content Include="Views\Recetas\Create.cshtml" />
+    <Content Include="Views\Recetas\Delete.cshtml" />
+    <Content Include="Views\Recetas\Details.cshtml" />
+    <Content Include="Views\Recetas\Edit.cshtml" />
+    <Content Include="Views\Recetas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -340,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711091826289_misterious_migration.resx">
       <DependentUpon>201711091826289_misterious_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711100048008_Refri_changes.resx">
+      <DependentUpon>201711100048008_Refri_changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -17,6 +17,7 @@ namespace Gazorpgazorpfridge.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -151,6 +152,14 @@ namespace Gazorpgazorpfridge.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Validate Fridge code
+                var fridgeCode = model.FridgeCode;
+                var frModel = db.Modelos.Where(u => u.codigo == fridgeCode).FirstOrDefault();
+                if (frModel == null)
+                {
+                    return RedirectToAction("Register", "Account");
+                }
+
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, name = model.name};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
