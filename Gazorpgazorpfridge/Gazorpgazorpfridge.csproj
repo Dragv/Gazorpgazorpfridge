@@ -227,6 +227,18 @@
     <Compile Include="Migrations\201711100048008_Refri_changes.Designer.cs">
       <DependentUpon>201711100048008_Refri_changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711101949575_Fixed_User.cs" />
+    <Compile Include="Migrations\201711101949575_Fixed_User.Designer.cs">
+      <DependentUpon>201711101949575_Fixed_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711102033095_Fixed_Refrigerator_ForeignKey.cs" />
+    <Compile Include="Migrations\201711102033095_Fixed_Refrigerator_ForeignKey.Designer.cs">
+      <DependentUpon>201711102033095_Fixed_Refrigerator_ForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711102323497_model_change.cs" />
+    <Compile Include="Migrations\201711102323497_model_change.Designer.cs">
+      <DependentUpon>201711102323497_model_change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -359,6 +371,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711100048008_Refri_changes.resx">
       <DependentUpon>201711100048008_Refri_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711101949575_Fixed_User.resx">
+      <DependentUpon>201711101949575_Fixed_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711102033095_Fixed_Refrigerator_ForeignKey.resx">
+      <DependentUpon>201711102033095_Fixed_Refrigerator_ForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711102323497_model_change.resx">
+      <DependentUpon>201711102323497_model_change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

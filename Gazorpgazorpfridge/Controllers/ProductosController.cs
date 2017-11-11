@@ -10,6 +10,7 @@ using Gazorpgazorpfridge.Models;
 
 namespace Gazorpgazorpfridge.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -52,7 +53,7 @@ namespace Gazorpgazorpfridge.Controllers
             {
                 db.Productos.Add(producto);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(producto);

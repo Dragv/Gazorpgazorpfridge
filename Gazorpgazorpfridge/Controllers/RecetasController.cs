@@ -10,6 +10,7 @@ using Gazorpgazorpfridge.Models;
 
 namespace Gazorpgazorpfridge.Controllers
 {
+    [Authorize(Roles = "User")]
     public class RecetasController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

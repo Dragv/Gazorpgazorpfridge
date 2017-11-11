@@ -1,5 +1,6 @@
 ﻿using Gazorpgazorpfridge.Models;
 using System;
+using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,12 +15,29 @@ namespace Gazorpgazorpfridge.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var toReturn = new AdminViewModel
+            if (User.IsInRole("Admin"))
             {
-                modelos = db.Modelos.ToList(),
-                productos = db.Productos.ToList()
-            };
-            return View(toReturn);
+                var toReturn = new AdminViewModel
+                {
+                    modelos = db.Modelos.ToList(),
+                    productos = db.Productos.ToList()
+                };
+                return View(toReturn);
+            }
+            else
+            {
+                var userID = User.Identity.GetUserId();
+                var toReturn = db.Refrigeradores.Where(u => u.applicationUser_id == userID).ToList();
+                if(toReturn != null)
+                {
+                    return View(toReturn);
+
+                }
+                else
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+            }
         }
 
         public ActionResult About()

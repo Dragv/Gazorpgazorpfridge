@@ -8,6 +8,7 @@ namespace Gazorpgazorpfridge.Models
 {
     public class Producto
     {
+        [Required]
         public int id { get; set; }
         [Display(Name = "Codigo")]
         [Required]

@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Gazorpgazorpfridge.Migrations;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace Gazorpgazorpfridge.Models
 {
@@ -22,7 +23,10 @@ namespace Gazorpgazorpfridge.Models
         [Display(Name = "Nombre")]
         public string name { get; set; }
 
-        public Receta canastaBasica { set; get; }
+        public ICollection<Refrigerador> refrigeradores { set; get; }
+
+        public ICollection<Receta> recetas { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

@@ -10,6 +10,7 @@ using Gazorpgazorpfridge.Models;
 
 namespace Gazorpgazorpfridge.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ModelosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

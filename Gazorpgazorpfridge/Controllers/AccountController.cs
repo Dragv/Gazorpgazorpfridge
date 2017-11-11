@@ -167,10 +167,15 @@ namespace Gazorpgazorpfridge.Controllers
                     UserManager.AddToRole(user.Id, "User");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
+
+                    var refri = new Refrigerador { modeloId = frModel.id, Modelo = frModel };
+                    db.Refrigeradores.Add(refri);
+                    db.SaveChanges();
+
                     // TODO:
                     // add fridge code to new user
 
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

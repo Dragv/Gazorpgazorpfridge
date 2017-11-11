@@ -1,9 +1,18 @@
 ﻿
+
 @if (User.IsInRole("Admin"))
 {
+    {
+        ViewBag.Title = "Home Page For Admin";
+    }
+
     @Html.Partial("IndexPartials/_IndexAdmin")
 }
 else if (User.IsInRole("User"))
 {
+    {
+        ViewBag.Title = "Home Page";
+    }
+
     @Html.Partial("IndexPartials/_IndexUser")
 }
