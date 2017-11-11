@@ -53,7 +53,7 @@ namespace Gazorpgazorpfridge.Controllers
             {
                 db.Modelos.Add(modelo);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(modelo);

@@ -156,10 +156,6 @@ namespace Gazorpgazorpfridge.Controllers
                 // Validate Fridge code
                 var fridgeCode = model.FridgeCode;
                 var frModel = db.Modelos.Where(u => u.codigo == fridgeCode).FirstOrDefault();
-                if (frModel == null)
-                {
-                    return RedirectToAction("Register", "Account");
-                }
 
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, name = model.name};
                 // Instantiate list of refri

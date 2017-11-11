@@ -11,8 +11,11 @@ namespace Gazorpgazorpfridge.Models
     {
         [Required]
         public int id { get; set; }
-        [Display(Name = "Codigo")]
+
         [Required]
+        [Display(Name = "Codigo")]
+        [StringLength(12, ErrorMessage = "The {0} must have {2} characters long.", MinimumLength = 12)]
+        [ExistModel]
         public string codigo { get; set; }
 
         public CanastaBasica micanasta { get; set; }
@@ -21,10 +24,12 @@ namespace Gazorpgazorpfridge.Models
 
         [ForeignKey("ApplicationUser")]
         public string applicationUser_id { get; set; }
+
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         [ForeignKey("Modelo")]
         public int modeloId { get; set; }
+
         public virtual Modelo Modelo { get; set; }
     }
 }

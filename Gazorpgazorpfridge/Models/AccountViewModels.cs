@@ -84,8 +84,9 @@ namespace Gazorpgazorpfridge.Models
         public string name { get; set; }
 
         [Required]
-        //[StringLength(12, ErrorMessage = "The {0} must have {2} characters long.", MinimumLength = 12)]
+        [StringLength(12, ErrorMessage = "The {0} must have {2} characters long.", MinimumLength = 12)]
         [Display(Name = "Frige code")]
+        [ExistModel]
         public string FridgeCode { get; set; }
 
     }

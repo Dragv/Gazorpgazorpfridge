@@ -42,7 +42,7 @@ namespace Gazorpgazorpfridge.Controllers
         // GET: Refrigeradores/Create
         public ActionResult Create()
         {
-            ViewBag.modeloId = new SelectList(db.Modelos, "id", "codigo");
+            //ViewBag.modeloId = new SelectList(db.Modelos, "id", "codigo");
             return View();
         }
 
@@ -51,12 +51,18 @@ namespace Gazorpgazorpfridge.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,codigo,modeloId")] Refrigerador refrigerador)
+        public ActionResult Create([Bind(Include = "id,codigo")] Refrigerador refrigerador)
         {
+            // Find respective model
+            var frModel = db.Modelos.Where(u => u.codigo == refrigerador.codigo).FirstOrDefault();
+
             if (ModelState.IsValid)
             {
+                // Fill the new refri atributes
                 refrigerador.applicationUser_id = User.Identity.GetUserId();
+                refrigerador.modeloId = frModel.id;
                 refrigerador.paquetes = new List<Paquete>();
+                // Update the database
                 db.Refrigeradores.Add(refrigerador);
                 db.SaveChanges();
                 return RedirectToAction("Index");

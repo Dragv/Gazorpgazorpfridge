@@ -252,10 +252,27 @@
     <Compile Include="Migrations\201711111713213_what.Designer.cs">
       <DependentUpon>201711111713213_what.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711111942377_refri-model-restriction.cs" />
+    <Compile Include="Migrations\201711111942377_refri-model-restriction.Designer.cs">
+      <DependentUpon>201711111942377_refri-model-restriction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711111947489_Modelo-model-restriction.cs" />
+    <Compile Include="Migrations\201711111947489_Modelo-model-restriction.Designer.cs">
+      <DependentUpon>201711111947489_Modelo-model-restriction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711112033554_Modelo-model-new-restriction.cs" />
+    <Compile Include="Migrations\201711112033554_Modelo-model-new-restriction.Designer.cs">
+      <DependentUpon>201711112033554_Modelo-model-new-restriction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711112038475_create-restriction.cs" />
+    <Compile Include="Migrations\201711112038475_create-restriction.Designer.cs">
+      <DependentUpon>201711112038475_create-restriction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\CanastaBasica.cs" />
+    <Compile Include="Models\ExistModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Modelo.cs" />
@@ -408,6 +425,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711111713213_what.resx">
       <DependentUpon>201711111713213_what.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711111942377_refri-model-restriction.resx">
+      <DependentUpon>201711111942377_refri-model-restriction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711111947489_Modelo-model-restriction.resx">
+      <DependentUpon>201711111947489_Modelo-model-restriction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711112033554_Modelo-model-new-restriction.resx">
+      <DependentUpon>201711112033554_Modelo-model-new-restriction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711112038475_create-restriction.resx">
+      <DependentUpon>201711112038475_create-restriction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

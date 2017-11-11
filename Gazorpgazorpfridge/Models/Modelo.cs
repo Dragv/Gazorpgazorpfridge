@@ -10,12 +10,16 @@ namespace Gazorpgazorpfridge.Models
     {
         [Required]
         public int id { get; set; }
+
         [Display(Name = "Codigo")]
+        [StringLength(12, ErrorMessage = "The {0} must have {2} characters long.", MinimumLength = 12)]
         [Required]
-        public string codigo { get; set; }
+        public string codigo { get; set;
+        }
         [Display(Name = "Capacidad")]
         [Required]
         public float capacidad { get; set; }
+
         [Display(Name = "Indice de Enfriamento")]
         [Required]
         public float indiceEnfriamiento { get; set; }
