@@ -14,8 +14,10 @@ namespace Gazorpgazorpfridge.Models
         [Display(Name = "Codigo")]
         [Required]
         public string codigo { get; set; }
-        public IEnumerable<Producto> productosAlamcenados { get; set; }
+
         public CanastaBasica micanasta { get; set; }
+
+        public ICollection<Paquete> paquetes { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string applicationUser_id { get; set; }

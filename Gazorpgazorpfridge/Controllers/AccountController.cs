@@ -165,7 +165,7 @@ namespace Gazorpgazorpfridge.Controllers
                 // Instantiate list of refri
                 user.refrigeradores = new List<Refrigerador>();
                 var refri = new Refrigerador { codigo = fridgeCode, modeloId = frModel.id };
-                refri.productosAlamcenados = new List<Producto>();
+                refri.paquetes = new List<Paquete>();
                 user.refrigeradores.Add(refri);
                 // Update dtabase with the new refri
                 db.Refrigeradores.Add(refri);

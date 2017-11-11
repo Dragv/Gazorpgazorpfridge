@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Gazorpgazorpfridge.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Gazorpgazorpfridge.Controllers
 {
@@ -53,6 +54,7 @@ namespace Gazorpgazorpfridge.Controllers
         {
             if (ModelState.IsValid)
             {
+                refrigerador.applicationUser_id = User.Identity.GetUserId();
                 db.Refrigeradores.Add(refrigerador);
                 db.SaveChanges();
                 return RedirectToAction("Index");

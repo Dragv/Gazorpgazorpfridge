@@ -16,6 +16,10 @@ namespace Gazorpgazorpfridge.Models
 
         public string caducidad { get; set; }
 
+        [ForeignKey("Refrigerador")]
+        public int refriId { get; set; }
+        public virtual Refrigerador Refrigerador { get; set; }
+
         [ForeignKey("Producto")]
         public int productId { get; set; }
         public virtual Producto Producto { get; set; }
