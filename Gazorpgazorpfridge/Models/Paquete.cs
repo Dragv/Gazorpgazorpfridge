@@ -12,14 +12,19 @@ namespace Gazorpgazorpfridge.Models
         [Required]
         public int id { get; set; }
 
+        [Display(Name = "Cantidad del producto")]
         public int cantidad { get; set; }
 
-        public string caducidad { get; set; }
+        [Display(Name = "Fecha de caducidad")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime caducidad { get; set; }
 
         [ForeignKey("Refrigerador")]
         public int refriId { get; set; }
         public virtual Refrigerador Refrigerador { get; set; }
 
+        [Display(Name = "Producto")]
         [ForeignKey("Producto")]
         public int productId { get; set; }
         public virtual Producto Producto { get; set; }
