@@ -193,6 +193,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModelosController.cs" />
+    <Compile Include="Controllers\PaquetesController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\RecetasController.cs" />
     <Compile Include="Controllers\RefrigeradoresController.cs" />
@@ -341,6 +342,12 @@
     <Content Include="Views\Recetas\Details.cshtml" />
     <Content Include="Views\Recetas\Edit.cshtml" />
     <Content Include="Views\Recetas\Index.cshtml" />
+    <Content Include="Views\Paquetes\Create.cshtml" />
+    <Content Include="Views\Paquetes\Delete.cshtml" />
+    <Content Include="Views\Paquetes\Details.cshtml" />
+    <Content Include="Views\Paquetes\Edit.cshtml" />
+    <Content Include="Views\Paquetes\Index.cshtml" />
+    <Content Include="Views\Paquetes\CreateForRefri.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
