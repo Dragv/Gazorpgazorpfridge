@@ -31,8 +31,8 @@
                     @Html.DisplayFor(modelItem => item.codigo)
                 </td>
                 <td>
-                    @Html.ActionLink("Details", "Details", "Refrigerador", new { id = item.id }, null) |
-                    @Html.ActionLink("Delete", "Delete", "Refrigerador", new { id = item.id }, null)
+                    @Html.ActionLink("Details", "../Refrigeradores/Details", "Refrigerador", new { id = item.id }, null) |
+                    @Html.ActionLink("Delete", "../Refrigeradores/Delete", "Refrigerador", new { id = item.id }, null)
                 </td>
             </tr>
         }
