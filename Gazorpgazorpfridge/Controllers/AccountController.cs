@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Gazorpgazorpfridge.Models;
+using System.Collections.Generic;
 
 namespace Gazorpgazorpfridge.Controllers
 {
@@ -161,20 +162,22 @@ namespace Gazorpgazorpfridge.Controllers
                 }
 
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, name = model.name};
+                // Instantiate list of refri
+                user.refrigeradores = new List<Refrigerador>();
+                var refri = new Refrigerador { codigo = fridgeCode, modeloId = frModel.id };
+                refri.productosAlamcenados = new List<Producto>();
+                user.refrigeradores.Add(refri);
+                // Update dtabase with the new refri
+                db.Refrigeradores.Add(refri);
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     UserManager.AddToRole(user.Id, "User");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
-
-                    var refri = new Refrigerador { modeloId = frModel.id, Modelo = frModel };
-                    db.Refrigeradores.Add(refri);
-                    db.SaveChanges();
-
-                    // TODO:
-                    // add fridge code to new user
-
+                    // db save changes commented because is giving an error, but user and data is actually being saved in the database
+                    // db.SaveChanges();
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
