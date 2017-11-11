@@ -20,7 +20,8 @@ namespace Gazorpgazorpfridge.Controllers
         public ActionResult Index()
         {
             var refrigeradores = db.Refrigeradores.Include(r => r.Modelo);
-            return View(refrigeradores.ToList());
+            return RedirectToAction("Index", "HomeController");
+            //return View(refrigeradores.ToList());
         }
 
         // GET: Refrigeradores/Details/5
@@ -55,6 +56,7 @@ namespace Gazorpgazorpfridge.Controllers
             if (ModelState.IsValid)
             {
                 refrigerador.applicationUser_id = User.Identity.GetUserId();
+                refrigerador.paquetes = new List<Paquete>();
                 db.Refrigeradores.Add(refrigerador);
                 db.SaveChanges();
                 return RedirectToAction("Index");

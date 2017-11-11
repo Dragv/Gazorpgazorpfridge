@@ -3,28 +3,40 @@
 <br />
 <br />
 
+@* Table for fridges owned by the user *@
     <p>
         @Html.ActionLink("Create New", "Create", "Refrigeradores")
     </p>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Modelo.codigo)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.codigo)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo.capacidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo.indiceEnfriamiento)
+            </th>
+            <th>
+                Capacidad disponible
+            </th>
         </tr>
 
         @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Modelo.codigo)
+                   @Html.DisplayFor(modelItem => item.codigo)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.codigo)
+                    @Html.DisplayFor(modelItem => item.Modelo.capacidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo.indiceEnfriamiento)
+                </td>
+                <td>
+                    //Poner calculo aqui//
                 </td>
                 <td>
                     @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, null)| 
