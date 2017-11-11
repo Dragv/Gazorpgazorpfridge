@@ -20,7 +20,7 @@ namespace Gazorpgazorpfridge.Controllers
         public ActionResult Index()
         {
             var refrigeradores = db.Refrigeradores.Include(r => r.Modelo);
-            return RedirectToAction("Index", "HomeController");
+            return RedirectToAction("Index", "Home/Index");
             //return View(refrigeradores.ToList());
         }
 
