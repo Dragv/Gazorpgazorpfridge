@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201711110633088_I_dont_get_this_UML.Designer.cs">
       <DependentUpon>201711110633088_I_dont_get_this_UML.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711111713213_what.cs" />
+    <Compile Include="Migrations\201711111713213_what.Designer.cs">
+      <DependentUpon>201711111713213_what.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -401,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711110633088_I_dont_get_this_UML.resx">
       <DependentUpon>201711110633088_I_dont_get_this_UML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711111713213_what.resx">
+      <DependentUpon>201711111713213_what.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
