@@ -162,6 +162,7 @@ namespace Gazorpgazorpfridge.Controllers
                 user.refrigeradores = new List<Refrigerador>();
                 var refri = new Refrigerador { codigo = fridgeCode, modeloId = frModel.id };
                 refri.paquetes = new List<Paquete>();
+                refri.capacidad_restante = frModel.capacidad;
                 user.refrigeradores.Add(refri);
                 // Update dtabase with the new refri
                 db.Refrigeradores.Add(refri);

@@ -36,7 +36,7 @@
                     @Html.DisplayFor(modelItem => item.Modelo.indiceEnfriamiento)
                 </td>
                 <td>
-                    //Poner calculo aqui//
+                    @Html.DisplayFor(modelItem => item.capacidad_restante)
                 </td>
                 <td>
                     @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, null)| 
