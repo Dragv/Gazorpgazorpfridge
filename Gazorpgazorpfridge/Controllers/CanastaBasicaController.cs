@@ -1,42 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Gazorpgazorpfridge.Models;
-using Microsoft.AspNet.Identity;
 
 namespace Gazorpgazorpfridge.Controllers
 {
     [Authorize(Roles = "User")]
-    public class RecetasController : Controller
+    public class CanastaBasicaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        // GET: Recetas
+        // GET: CanastaBásica
         public ActionResult Index()
         {
-            return View(db.Recetas.ToList());
+            return View(db.CanastasBasicas.ToList());
         }
 
-        // GET: Recetas/Details/5
+        // GET: CanastaBásica/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Receta receta = db.Recetas.Find(id);
+            CanastaBasica canasta = db.CanastasBasicas.Find(id);
             if (receta == null)
             {
                 return HttpNotFound();
             }
-            return View(receta);
+            return View(canasta);
         }
 
-        // GET: Recetas/Create
+        // GET: CanastaBásica/Create
         public ActionResult Create()
         {
             ViewBag.producto = db.Productos;
@@ -44,88 +39,78 @@ namespace Gazorpgazorpfridge.Controllers
             return View();
         }
 
-        // POST: Recetas/Create
+        // POST: CanastaBásica/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,descripcion")] Receta receta)
+        public ActionResult Create([Bind(Include = "id,descripcion,perEscasez")] CanastaBasica canasta)
         {
-            if (ModelState.IsValid)
+           if (ModelState.IsValid)
             {
-                receta.applicationUser_id = User.Identity.GetUserId();
-                db.Recetas.Add(receta);
+                db.CanastasBasicas.Add(canasta);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(receta);
+            return View(canasta);
         }
 
-        // GET: Recetas/Edit/5
+        // GET: CanastaBásica/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+           if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Receta receta = db.Recetas.Find(id);
-            if (receta == null)
+            CanastaBasica canasta = db.CanastasBasicas.Find(id);
+            if (canasta == null)
             {
                 return HttpNotFound();
             }
-            return View(receta);
+            return View(canasta);
         }
 
-        // POST: Recetas/Edit/5
+        // POST: CanastaBásica/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,descripcion")] Receta receta)
+        public ActionResult Edit([Bind(Include = "id,descripcion,perEscasez")] CanastaBasica canasta)
         {
-            if (ModelState.IsValid)
+             if (ModelState.IsValid)
             {
-                db.Entry(receta).State = EntityState.Modified;
+                db.Entry(canasta).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(receta);
+            return View(canasta);
         }
 
-        // GET: Recetas/Delete/5
+        // GET: CanastaBásica/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Receta receta = db.Recetas.Find(id);
+            CanastaBasica canasta = db.CanastasBasicas.Find(id);
             if (receta == null)
             {
                 return HttpNotFound();
             }
-            return View(receta);
+            return View(canasta);
         }
 
-        // POST: Recetas/Delete/5
+        // POST: CanastaBásica/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Receta receta = db.Recetas.Find(id);
-            db.Recetas.Remove(receta);
+            CanastaBasica canasta= db.CanastasBasicas.Find(id);
+            db.CanastasBasicas.Remove(canasta);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
