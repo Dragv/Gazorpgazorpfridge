@@ -39,13 +39,13 @@
                     @Html.DisplayFor(modelItem => item.capacidad_restante)
                 </td>
                 <td>
-                    @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, null)| 
+                    @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, null)|
+                    @Html.ActionLink("Listar Paquete", "ListPaquetes", "Paquetes", new { id = item.id }, null)| 
                     @Html.ActionLink("Details", "Details", "Refrigeradores", new { id = item.id }, null) |
                     @Html.ActionLink("Delete", "Delete", "Refrigeradores", new { id = item.id }, null)
                 </td>
             </tr>
         }
-
     </table>
 
 <p>
