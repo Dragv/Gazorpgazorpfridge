@@ -60,7 +60,15 @@ namespace Gazorpgazorpfridge.Controllers
                 db.Paquetes.Add(paquete);
                 var current_refri = db.Refrigeradores.Where(u => u.id == paquete.refriId).FirstOrDefault();
                 var current_vol_pack = db.Productos.Where(u => u.id == paquete.productId).FirstOrDefault();
-                current_refri.capacidad_restante -= paquete.cantidad * current_vol_pack.espacioVol;
+                var volumen_consumido = paquete.cantidad * current_vol_pack.espacioVol;
+
+                if (current_refri.capacidad_restante - volumen_consumido < 0)
+                {
+                    TempData["ErrorMessage"] = "Capacidad excedida de refrigerador, no se pudo agregar su producto";
+                    return RedirectToAction("Index", "Home");
+                }
+                current_refri.capacidad_restante -= volumen_consumido;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

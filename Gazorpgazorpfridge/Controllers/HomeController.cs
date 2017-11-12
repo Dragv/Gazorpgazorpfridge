@@ -28,10 +28,11 @@ namespace Gazorpgazorpfridge.Controllers
             {
                 var userID = User.Identity.GetUserId();
                 var toReturn = db.Refrigeradores.Where(u => u.applicationUser_id == userID).ToList();
+                ViewBag.errMsg = TempData["ErrorMessage"] as string;
+                
                 if(toReturn != null)
                 {
                     return View(toReturn);
-
                 }
                 else
                 {
