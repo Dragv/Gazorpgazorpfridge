@@ -42,6 +42,38 @@
             @Html.DisplayFor(model => model.Modelo.indiceEnfriamiento)
         </dd>
     </dl>
+    <h4>Canasta básica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        @if (Model != null && Model.micanasta != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.micanasta.productos)
+            </dt>
+            foreach (var item in Model.micanasta.productos.AsEnumerable())
+            {
+                <dd>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </dd>
+            }
+            <dt>
+                @Html.DisplayNameFor(model => model.micanasta.descripcion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.micanasta.descripcion)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.micanasta.perEscasez)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.micanasta.perEscasez)
+            </dd>
+        }
+        @Html.ActionLink("Editar canasta básica", "../CanastaBasica/Edit")
+    </dl>
 </div>
 <p>
     @* @Html.ActionLink("Edit", "Edit", new { id = Model.id }) | *@

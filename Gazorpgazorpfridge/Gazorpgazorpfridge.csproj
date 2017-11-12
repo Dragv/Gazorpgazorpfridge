@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CanastaBásicaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModelosController.cs" />
@@ -374,9 +375,11 @@
     <Content Include="Views\Paquetes\Index.cshtml" />
     <Content Include="Views\Paquetes\CreateForRefri.cshtml" />
     <Content Include="Views\Refrigeradores\ListPaquetes.cshtml" />
+    <Content Include="Views\Paquetes\Consume.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CanastaBásica\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

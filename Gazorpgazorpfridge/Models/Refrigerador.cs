@@ -13,7 +13,7 @@ namespace Gazorpgazorpfridge.Models
         public int id { get; set; }
 
         [Required]
-        [Display(Name = "Codigo")]
+        [Display(Name = "Codigo del refrigerador")]
         [StringLength(12, ErrorMessage = "The {0} must have {2} characters long.", MinimumLength = 12)]
         [ExistModel]
         public string codigo { get; set; }

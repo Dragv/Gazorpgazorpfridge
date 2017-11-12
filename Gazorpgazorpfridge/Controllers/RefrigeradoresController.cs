@@ -42,6 +42,10 @@ namespace Gazorpgazorpfridge.Controllers
         // GET: Refrigeradores/Details/5
         public ActionResult ListPaquetes(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             var lista = db.Refrigeradores.Where(u => u.id == id).FirstOrDefault().paquetes.ToList();
             return View(lista);
         }
