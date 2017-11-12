@@ -15,9 +15,12 @@ namespace Gazorpgazorpfridge.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Paquetes
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             var paquetes = db.Paquetes.Include(p => p.Producto).Include(p => p.Refrigerador);
+            if (id != null) {
+                paquetes = db.Paquetes.Where(u => u.refriId == id).Include(p => p.Producto).Include(p => p.Refrigerador);
+            }
             return View(paquetes.ToList());
         }
 
@@ -59,7 +62,7 @@ namespace Gazorpgazorpfridge.Controllers
                 var current_vol_pack = db.Productos.Where(u => u.id == paquete.productId).FirstOrDefault();
                 current_refri.capacidad_restante -= paquete.cantidad * current_vol_pack.espacioVol;
                 db.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index");
             }
 
             ViewBag.productId = new SelectList(db.Productos, "id", "codigo", paquete.productId);
