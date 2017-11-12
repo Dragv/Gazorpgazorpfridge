@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Gazorpgazorpfridge.Models.Refrigerador>
+﻿@model Gazorpgazorpfridge.Models.UserViewModel
 
 <br />
 <br />
@@ -16,20 +16,20 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.codigo)
+                @Html.DisplayNameFor(model => model.refrigeradores.FirstOrDefault().codigo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Modelo.capacidad)
+                @Html.DisplayNameFor(model => model.refrigeradores.FirstOrDefault().Modelo.capacidad)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Modelo.indiceEnfriamiento)
+                @Html.DisplayNameFor(model => model.refrigeradores.FirstOrDefault().Modelo.indiceEnfriamiento)
             </th>
             <th>
                 Capacidad disponible
             </th>
         </tr>
 
-        @foreach (var item in Model)
+        @foreach (var item in Model.refrigeradores)
         {
             <tr>
                 <td>
@@ -60,38 +60,30 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.codigo)
+            @Html.DisplayNameFor(model => model.recetas.FirstOrDefault().productos)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Modelo.capacidad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Modelo.indiceEnfriamiento)
-        </th>
-        <th>
-            Capacidad disponible
+            @Html.DisplayNameFor(model => model.recetas.FirstOrDefault().descripcion)
         </th>
     </tr>
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.recetas)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.codigo)
+                @foreach (var pro in item.productos)
+                {
+                    <td>
+                        @Html.DisplayFor(modelitem => pro.nombre)
+                    </td>
+                }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Modelo.capacidad)
+                @Html.DisplayFor(modelItem => item.descripcion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Modelo.indiceEnfriamiento)
-            </td>
-            <td>
-                //Poner calculo aqui//
-            </td>
-            <td>
-                @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, null)|
-                @Html.ActionLink("Details", "Details", "Refrigeradores", new { id = item.id }, null) |
-                @Html.ActionLink("Delete", "Delete", "Refrigeradores", new { id = item.id }, null)
+                @Html.ActionLink("Editar receta", "Edit", "Recetas", new { id = item.id }, null)|
+                @Html.ActionLink("Borrar", "Delete", "Recetas", new { id = item.id }, null)
             </td>
         </tr>
     }
