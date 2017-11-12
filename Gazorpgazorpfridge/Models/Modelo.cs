@@ -16,7 +16,7 @@ namespace Gazorpgazorpfridge.Models
         [Required]
         public string codigo { get; set;
         }
-        [Display(Name = "Capacidad")]
+        [Display(Name = "Capacidad Maxima")]
         [Required]
         public float capacidad { get; set; }
 
