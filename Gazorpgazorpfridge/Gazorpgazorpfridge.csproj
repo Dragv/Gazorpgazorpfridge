@@ -369,6 +369,7 @@
     <Content Include="Views\Paquetes\Edit.cshtml" />
     <Content Include="Views\Paquetes\Index.cshtml" />
     <Content Include="Views\Paquetes\CreateForRefri.cshtml" />
+    <Content Include="Views\Refrigeradores\ListPaquetes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

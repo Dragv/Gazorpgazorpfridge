@@ -39,6 +39,13 @@ namespace Gazorpgazorpfridge.Controllers
             return View(refrigerador);
         }
 
+        // GET: Refrigeradores/Details/5
+        public ActionResult ListPaquetes(int? id)
+        {
+            var lista = db.Refrigeradores.Where(u => u.id == id).FirstOrDefault().paquetes.ToList();
+            return View(lista);
+        }
+
         // GET: Refrigeradores/Create
         public ActionResult Create()
         {

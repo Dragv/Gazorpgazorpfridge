@@ -1,4 +1,8 @@
-﻿@model Gazorpgazorpfridge.Models.Refrigerador
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+@model Gazorpgazorpfridge.Models.Refrigerador
 
 @{
     ViewBag.Title = "Details";
@@ -25,8 +29,6 @@
         <dd>
             @Html.DisplayFor(model => model.codigo)
         </dd>
-
-    </dl>
 </div>
 <p>
     @* @Html.ActionLink("Edit", "Edit", new { id = Model.id }) | *@
