@@ -190,7 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CanastaBásicaController.cs" />
+    <Compile Include="Controllers\CanastaBasicasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModelosController.cs" />
@@ -383,6 +383,11 @@
     <Content Include="Views\Paquetes\Index.cshtml" />
     <Content Include="Views\Paquetes\CreateForRefri.cshtml" />
     <Content Include="Views\Refrigeradores\ListPaquetes.cshtml" />
+    <Content Include="Views\CanastaBasicas\Create.cshtml" />
+    <Content Include="Views\CanastaBasicas\Delete.cshtml" />
+    <Content Include="Views\CanastaBasicas\Details.cshtml" />
+    <Content Include="Views\CanastaBasicas\Edit.cshtml" />
+    <Content Include="Views\CanastaBasicas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
