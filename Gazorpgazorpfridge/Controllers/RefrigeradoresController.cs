@@ -73,6 +73,7 @@ namespace Gazorpgazorpfridge.Controllers
                 refrigerador.applicationUser_id = User.Identity.GetUserId();
                 refrigerador.modeloId = frModel.id;
                 refrigerador.paquetes = new List<Paquete>();
+                refrigerador.capacidad_restante = frModel.capacidad;
                 // Update the database
                 db.Refrigeradores.Add(refrigerador);
                 db.SaveChanges();

@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Productos almacenados</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @* @Html.ActionLink("Create New", "Create") *@
 </p>
 <table class="table">
     <tr>
@@ -35,8 +35,8 @@
             @Html.DisplayFor(modelItem => item.caducidad)
         </td>
         <td>
-            @Html.ActionLink("Consumir", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Consumir", "Edit", new { id=item.id }, new { @class = "btn btn-success"} )
+            @* @Html.ActionLink("Delete", "Delete", new { id=item.id }) *@
         </td>
     </tr>
 }

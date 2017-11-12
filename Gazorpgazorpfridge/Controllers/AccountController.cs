@@ -153,28 +153,30 @@ namespace Gazorpgazorpfridge.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Validate Fridge code
-                var fridgeCode = model.FridgeCode;
-                var frModel = db.Modelos.Where(u => u.codigo == fridgeCode).FirstOrDefault();
-
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, name = model.name};
-                // Instantiate list of refri
-                user.refrigeradores = new List<Refrigerador>();
-                var refri = new Refrigerador { codigo = fridgeCode, modeloId = frModel.id };
-                refri.paquetes = new List<Paquete>();
-                refri.capacidad_restante = frModel.capacidad;
-                user.refrigeradores.Add(refri);
-                // Update dtabase with the new refri
-                db.Refrigeradores.Add(refri);
-
                 var result = await UserManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
                     UserManager.AddToRole(user.Id, "User");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
+                    // Validate Fridge code
+                    var fridgeCode = model.FridgeCode;
+                    var frModel = db.Modelos.Where(u => u.codigo == fridgeCode).FirstOrDefault();
+                    // Instantiate list of refri
+                    user.refrigeradores = new List<Refrigerador>();
+                    var refri = new Refrigerador { codigo = fridgeCode, modeloId = frModel.id };
+                    refri.paquetes = new List<Paquete>();
+                    refri.capacidad_restante = frModel.capacidad;
+                    refri.applicationUser_id = user.Id;
+                    user.refrigeradores.Add(refri);
+                    // Update dtabase with the new refri
+                    db.Refrigeradores.Add(refri);
+                    db.SaveChanges();
+
                     // db save changes commented because is giving an error, but user and data is actually being saved in the database
-                    // db.SaveChanges();
+                    //db.SaveChanges();
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link

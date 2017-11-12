@@ -60,9 +60,17 @@ namespace Gazorpgazorpfridge.Controllers
                 db.Paquetes.Add(paquete);
                 var current_refri = db.Refrigeradores.Where(u => u.id == paquete.refriId).FirstOrDefault();
                 var current_vol_pack = db.Productos.Where(u => u.id == paquete.productId).FirstOrDefault();
-                current_refri.capacidad_restante -= paquete.cantidad * current_vol_pack.espacioVol;
+                var volumen_consumido = paquete.cantidad * current_vol_pack.espacioVol;
+
+                if (current_refri.capacidad_restante - volumen_consumido < 0)
+                {
+                    TempData["ErrorMessage"] = "Capacidad excedida de refrigerador, no se pudo agregar su producto";
+                    return RedirectToAction("Index", "Home");
+                }
+                current_refri.capacidad_restante -= volumen_consumido;
+
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.productId = new SelectList(db.Productos, "id", "codigo", paquete.productId);
@@ -97,23 +105,6 @@ namespace Gazorpgazorpfridge.Controllers
             return View(paquete);
         }
 
-        // GET: Paquetes/Consume/5
-        public ActionResult Consume(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Paquete paquete = db.Paquetes.Find(id);
-            if (paquete == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.productId = new SelectList(db.Productos, "id", "codigo", paquete.productId);
-            ViewBag.refriId = new SelectList(db.Refrigeradores, "id", "codigo", paquete.refriId);
-            return View(paquete);
-        }
-
         // GET: Paquetes/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -140,9 +131,28 @@ namespace Gazorpgazorpfridge.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(paquete).State = EntityState.Modified;
+                var pack = db.Paquetes.Where(u => u.id == paquete.id).FirstOrDefault();
+                
+                var current_refri = db.Refrigeradores.Where(u => u.id == pack.refriId).FirstOrDefault();
+
+                var current_product = db.Productos.Where(u => u.id == pack.productId).FirstOrDefault();
+
+                pack.cantidad -= paquete.cantidad;
+
+                if (pack.cantidad <= 0)
+                {
+                    current_refri.capacidad_restante += (paquete.cantidad + pack.cantidad) * current_product.espacioVol;
+                    db.Paquetes.Remove(pack);
+                }
+                else
+                {
+                    current_refri.capacidad_restante += paquete.cantidad * current_product.espacioVol;
+                }
+
+                //db.Entry(paquete).State = EntityState.Modified;
+
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             ViewBag.productId = new SelectList(db.Productos, "id", "codigo", paquete.productId);
             ViewBag.refriId = new SelectList(db.Refrigeradores, "id", "codigo", paquete.refriId);

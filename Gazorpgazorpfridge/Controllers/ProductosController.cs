@@ -49,6 +49,11 @@ namespace Gazorpgazorpfridge.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,codigo,nombre,espacioVol,medida")] Producto producto)
         {
+            bool IsProductNameExist = db.Productos.Any(x => x.codigo == producto.codigo && x.id != producto.id);
+            if (IsProductNameExist == true)
+            {
+                ModelState.AddModelError("codigo", "Product already exists");
+            }
             if (ModelState.IsValid)
             {
                 db.Productos.Add(producto);
@@ -81,6 +86,11 @@ namespace Gazorpgazorpfridge.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,codigo,nombre,espacioVol,medida")] Producto producto)
         {
+            bool IsProductNameExist = db.Productos.Any(x => x.codigo == producto.codigo && x.id != producto.id);
+            if (IsProductNameExist == true)
+            {
+                ModelState.AddModelError("codigo", "Product already exists");
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(producto).State = EntityState.Modified;

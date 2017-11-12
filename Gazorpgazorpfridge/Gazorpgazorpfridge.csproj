@@ -273,6 +273,14 @@
     <Compile Include="Migrations\201711120014273_refri_model_changes.Designer.cs">
       <DependentUpon>201711120014273_refri_model_changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711120514410_paquete-modificaciones.cs" />
+    <Compile Include="Migrations\201711120514410_paquete-modificaciones.Designer.cs">
+      <DependentUpon>201711120514410_paquete-modificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711120705341_just_in_case.cs" />
+    <Compile Include="Migrations\201711120705341_just_in_case.Designer.cs">
+      <DependentUpon>201711120705341_just_in_case.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -375,7 +383,6 @@
     <Content Include="Views\Paquetes\Index.cshtml" />
     <Content Include="Views\Paquetes\CreateForRefri.cshtml" />
     <Content Include="Views\Refrigeradores\ListPaquetes.cshtml" />
-    <Content Include="Views\Paquetes\Consume.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -448,6 +455,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711120014273_refri_model_changes.resx">
       <DependentUpon>201711120014273_refri_model_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711120514410_paquete-modificaciones.resx">
+      <DependentUpon>201711120514410_paquete-modificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711120705341_just_in_case.resx">
+      <DependentUpon>201711120705341_just_in_case.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
