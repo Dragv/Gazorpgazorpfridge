@@ -39,6 +39,8 @@ namespace Gazorpgazorpfridge.Controllers
         // GET: Recetas/Create
         public ActionResult Create()
         {
+            ViewBag.producto = db.Productos;
+            ViewBag.productId = new SelectList(db.Productos, "id", "codigo");
             return View();
         }
 
