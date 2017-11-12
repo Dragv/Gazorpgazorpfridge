@@ -55,6 +55,9 @@ namespace Gazorpgazorpfridge.Controllers
             if (ModelState.IsValid)
             {
                 db.Paquetes.Add(paquete);
+                var current_refri = db.Refrigeradores.Where(u => u.id == paquete.refriId).FirstOrDefault();
+                var current_vol_pack = db.Productos.Where(u => u.id == paquete.productId).FirstOrDefault();
+                current_refri.capacidad_restante -= paquete.cantidad * current_vol_pack.espacioVol;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
