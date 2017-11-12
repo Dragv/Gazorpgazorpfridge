@@ -273,6 +273,10 @@
     <Compile Include="Migrations\201711120014273_refri_model_changes.Designer.cs">
       <DependentUpon>201711120014273_refri_model_changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711120514410_paquete-modificaciones.cs" />
+    <Compile Include="Migrations\201711120514410_paquete-modificaciones.Designer.cs">
+      <DependentUpon>201711120514410_paquete-modificaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -447,6 +451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711120014273_refri_model_changes.resx">
       <DependentUpon>201711120014273_refri_model_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711120514410_paquete-modificaciones.resx">
+      <DependentUpon>201711120514410_paquete-modificaciones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

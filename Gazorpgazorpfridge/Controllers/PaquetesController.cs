@@ -70,7 +70,7 @@ namespace Gazorpgazorpfridge.Controllers
                 current_refri.capacidad_restante -= volumen_consumido;
 
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.productId = new SelectList(db.Productos, "id", "codigo", paquete.productId);
