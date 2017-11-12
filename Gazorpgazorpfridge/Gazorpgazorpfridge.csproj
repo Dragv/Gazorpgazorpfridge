@@ -277,6 +277,10 @@
     <Compile Include="Migrations\201711120514410_paquete-modificaciones.Designer.cs">
       <DependentUpon>201711120514410_paquete-modificaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711120705341_just_in_case.cs" />
+    <Compile Include="Migrations\201711120705341_just_in_case.Designer.cs">
+      <DependentUpon>201711120705341_just_in_case.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -454,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711120514410_paquete-modificaciones.resx">
       <DependentUpon>201711120514410_paquete-modificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711120705341_just_in_case.resx">
+      <DependentUpon>201711120705341_just_in_case.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
