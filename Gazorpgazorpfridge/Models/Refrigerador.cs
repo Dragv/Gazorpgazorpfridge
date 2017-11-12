@@ -18,6 +18,8 @@ namespace Gazorpgazorpfridge.Models
         [ExistModel]
         public string codigo { get; set; }
 
+        public float capacidad_restante { get; set; }
+
         public CanastaBasica micanasta { get; set; }
 
         public ICollection<Paquete> paquetes { get; set; }
