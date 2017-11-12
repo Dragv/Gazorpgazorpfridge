@@ -59,7 +59,7 @@ namespace Gazorpgazorpfridge.Controllers
                 var current_vol_pack = db.Productos.Where(u => u.id == paquete.productId).FirstOrDefault();
                 current_refri.capacidad_restante -= paquete.cantidad * current_vol_pack.espacioVol;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.productId = new SelectList(db.Productos, "id", "codigo", paquete.productId);

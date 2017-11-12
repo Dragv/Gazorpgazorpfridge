@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-@model Gazorpgazorpfridge.Models.Refrigerador
+﻿@model Gazorpgazorpfridge.Models.Refrigerador
 
 @{
     ViewBag.Title = "Details";
@@ -23,12 +19,29 @@ using System.ComponentModel.DataAnnotations.Schema;
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.codigo)
+            @Html.DisplayNameFor(model => model.capacidad_restante)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.codigo)
+            @Html.DisplayFor(model => model.capacidad_restante)
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo.capacidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelo.capacidad)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo.indiceEnfriamiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelo.indiceEnfriamiento)
+        </dd>
+    </dl>
 </div>
 <p>
     @* @Html.ActionLink("Edit", "Edit", new { id = Model.id }) | *@

@@ -18,6 +18,7 @@ namespace Gazorpgazorpfridge.Models
         [ExistModel]
         public string codigo { get; set; }
 
+        [Display(Name = "Capacidad Restante")]
         public float capacidad_restante { get; set; }
 
         public CanastaBasica micanasta { get; set; }
