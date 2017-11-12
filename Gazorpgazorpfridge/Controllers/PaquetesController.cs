@@ -152,7 +152,7 @@ namespace Gazorpgazorpfridge.Controllers
                 //db.Entry(paquete).State = EntityState.Modified;
 
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             ViewBag.productId = new SelectList(db.Productos, "id", "codigo", paquete.productId);
             ViewBag.refriId = new SelectList(db.Refrigeradores, "id", "codigo", paquete.refriId);

@@ -16,10 +16,10 @@ namespace Gazorpgazorpfridge.Models
         [Display(Name = "Nombre")]
         [Required]
         public string nombre { get; set; }
-        [Display(Name = "Espacio en Volumen")]
+        [Display(Name = "Espacio volumetrico en Litros")]
         [Required]
         public float espacioVol { get; set; }
-        [Display(Name = "Medida")]
+        [Display(Name = "Unidades de medicion")]
         [Required]
         public string medida { get; set; }
     }

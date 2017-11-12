@@ -36,13 +36,13 @@
                    @Html.DisplayFor(modelItem => item.codigo)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Modelo.capacidad)
+                    @Html.DisplayFor(modelItem => item.Modelo.capacidad) Lts.
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Modelo.indiceEnfriamiento)
+                    @Html.DisplayFor(modelItem => item.Modelo.indiceEnfriamiento) ^C
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.capacidad_restante)
+                    @Html.DisplayFor(modelItem => item.capacidad_restante) Lts.
                 </td>
                 <td>
                     @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, null) |

@@ -30,16 +30,16 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.codigo)
                     </td>
-                    <td>x
-                        @Html.DisplayFor(modelItem => item.capacidad)
+                    <td>
+                        @Html.DisplayFor(modelItem => item.capacidad) Lts.
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.indiceEnfriamiento)
+                        @Html.DisplayFor(modelItem => item.indiceEnfriamiento) ^C
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", "Modelos", new { id = item.id }, null) |
-                        @Html.ActionLink("Details", "Details", "Modelos", new { id = item.id }, null) |
-                        @Html.ActionLink("Delete", "Delete", "Modelos", new { id = item.id }, null)
+                        @Html.ActionLink("Editar", "Edit", "Modelos", new { id = item.id }, null) |
+                        @Html.ActionLink("Detalles", "Details", "Modelos", new { id = item.id }, null) |
+                        @Html.ActionLink("Eliminar", "Delete", "Modelos", new { id = item.id }, null)
                     </td>
                 </tr>
             }
@@ -85,9 +85,9 @@
                         @Html.DisplayFor(modelItem => item.medida)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", "Productos", new { id = item.id }, null) |
-                        @Html.ActionLink("Details", "Details", "Productos", new { id = item.id }, null) |
-                        @Html.ActionLink("Delete", "Delete", "Productos", new { id = item.id }, null)
+                        @Html.ActionLink("Editar", "Edit", "Productos", new { id = item.id }, null) |
+                        @Html.ActionLink("Detalles", "Details", "Productos", new { id = item.id }, null) |
+                        @Html.ActionLink("Eliminar", "Delete", "Productos", new { id = item.id }, null)
                     </td>
                 </tr>
             }

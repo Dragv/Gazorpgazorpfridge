@@ -158,7 +158,6 @@ namespace Gazorpgazorpfridge.Controllers
 
                 if (result.Succeeded)
                 {
-                    // It looks that the below code duplicates the model register
                     UserManager.AddToRole(user.Id, "User");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
