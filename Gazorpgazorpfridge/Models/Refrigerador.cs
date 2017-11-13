@@ -21,8 +21,6 @@ namespace Gazorpgazorpfridge.Models
         [Display(Name = "Capacidad Restante")]
         public float capacidad_restante { get; set; }
 
-        public CanastaBasica micanasta { get; set; }
-
         public ICollection<Paquete> paquetes { get; set; }
 
         [ForeignKey("ApplicationUser")]
