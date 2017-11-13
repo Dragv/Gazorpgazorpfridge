@@ -49,12 +49,12 @@
         @if (Model != null && Model.canastaBasica != null)
         {
             <dt>
-                @Html.DisplayNameFor(model => model.canastaBasica.productos)
+                @Html.DisplayNameFor(model => model.canastaBasica.productForCanasta)
             </dt>
-            foreach (var item in Model.canastaBasica.productos.AsEnumerable())
+            foreach (var item in Model.canastaBasica.productForCanasta)
             {
                 <dd>
-                    @Html.DisplayFor(modelItem => item.nombre)
+                    @Html.DisplayFor(modelItem => item.Producto.nombre)
                 </dd>
             }
             <dt>
@@ -72,7 +72,8 @@
                 @Html.DisplayFor(model => model.canastaBasica.perEscasez)
             </dd>
         }
-        @Html.ActionLink("Editar canasta básica", "../CanastaBasica/Edit", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Añadir Producto", "CreateForCanasta", "ProductForCanastas", new { id = Model.canastaBasica.id }, new { @class = "btn btn-default" })
+        @Html.ActionLink("Editar canasta básica", "../CanastaBasica/Edit", new { id = Model.canastaBasica.id }, new { @class = "btn btn-default" })
     </dl>
 </div>
 <p>

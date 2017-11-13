@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Gazorpgazorpfridge.Models;
+using System.Net.Mail;
+using Microsoft.AspNet.Identity;
+using System.Configuration;
 
 namespace Gazorpgazorpfridge.Controllers
 {
@@ -61,6 +64,28 @@ namespace Gazorpgazorpfridge.Controllers
                 var current_refri = db.Refrigeradores.Where(u => u.id == paquete.refriId).FirstOrDefault();
                 var current_vol_pack = db.Productos.Where(u => u.id == paquete.productId).FirstOrDefault();
                 var volumen_consumido = paquete.cantidad * current_vol_pack.espacioVol;
+
+                if ((current_refri.capacidad_restante - volumen_consumido) <= (current_refri.Modelo.capacidad*0.2))
+                {
+                    MailMessage mailMessage = new MailMessage();
+                    mailMessage.From = new MailAddress("gazorpgazor@gmail.com");
+                    string currentUserId = User.Identity.GetUserId();
+                    ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+                    mailMessage.To.Add(currentUser.Email);
+                    mailMessage.Subject = $"Se te acaba el espacio Bro";
+                    mailMessage.Body = $"Se acaba el espacio de tu refri, esta a {current_refri.capacidad_restante - volumen_consumido} de capacidad";
+
+                    SmtpClient smtp = new SmtpClient();
+
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new NetworkCredential("gazorpgazor", "Hermes_69");
+
+                    smtp.Send(mailMessage);
+                }
 
                 if (current_refri.capacidad_restante - volumen_consumido < 0)
                 {

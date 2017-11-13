@@ -9,7 +9,7 @@ namespace Gazorpgazorpfridge.Models
     {
         public IEnumerable<Refrigerador> refrigeradores { get; set; }
         public IEnumerable<Receta> recetas { get; set; }
-
+        public IEnumerable<Paquete> paquetes { get; set; }
         public CanastaBasica canasta { get; set; }
     }
 }
