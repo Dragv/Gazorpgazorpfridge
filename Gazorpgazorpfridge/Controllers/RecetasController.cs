@@ -56,7 +56,7 @@ namespace Gazorpgazorpfridge.Controllers
                 receta.applicationUser_id = User.Identity.GetUserId();
                 db.Recetas.Add(receta);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(receta);
@@ -88,7 +88,7 @@ namespace Gazorpgazorpfridge.Controllers
             {
                 db.Entry(receta).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View(receta);
         }
@@ -116,7 +116,7 @@ namespace Gazorpgazorpfridge.Controllers
             Receta receta = db.Recetas.Find(id);
             db.Recetas.Remove(receta);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         protected override void Dispose(bool disposing)

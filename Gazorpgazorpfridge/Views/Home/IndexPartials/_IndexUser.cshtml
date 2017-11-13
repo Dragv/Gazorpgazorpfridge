@@ -1,96 +1,94 @@
 ﻿@model Gazorpgazorpfridge.Models.UserViewModel
-
 <br />
 <br />
-
 <span class="field-validation-error text-danger input-lg has-error" data-valmsg-replace="true"> @ViewBag.errMsg</span>
-
 <br />
 <br />
-
 
 @* Table for fridges owned by the user *@
-    <p>
-        @Html.ActionLink("Add refri", "Create", "Refrigeradores")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.refrigeradores.FirstOrDefault().codigo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.refrigeradores.FirstOrDefault().Modelo.capacidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.refrigeradores.FirstOrDefault().Modelo.indiceEnfriamiento)
-            </th>
-            <th>
-                Capacidad disponible
-            </th>
-        </tr>
-
-        @foreach (var item in Model.refrigeradores)
-        {
-            <tr>
-                <td>
-                   @Html.DisplayFor(modelItem => item.codigo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Modelo.capacidad) Lts.
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Modelo.indiceEnfriamiento) ^C
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.capacidad_restante) Lts.
-                </td>
-                <td>
-                    @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, null) |
-                    @Html.ActionLink("Listar Paquete", "Index", "Paquetes", new { id = item.id }, null) | 
-                    @Html.ActionLink("Ver mi refri", "Details", "Refrigeradores", new { id = item.id }, null) |
-                    @Html.ActionLink("Eliminar", "Delete", "Refrigeradores", new { id = item.id }, null)|
-                    @Html.ActionLink("Canasta basica","Index","CanastaBasica", new { id = item.id }, null)|
-                    @Html.ActionLink("Crear canasta", "Create", "CanastaBasica", new { id = item.id }, null)
-                </td>
-            </tr>
-        }
-    </table>
-
 <p>
-    @Html.ActionLink("Add receta", "Create", "Recetas")
+    @Html.ActionLink("Add refri", "Create", "Refrigeradores")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.recetas.FirstOrDefault().productos)
+            @Html.DisplayNameFor(model => model.refrigeradores.FirstOrDefault().codigo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.recetas.FirstOrDefault().descripcion)
+            @Html.DisplayNameFor(model => model.refrigeradores.FirstOrDefault().Modelo.capacidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.refrigeradores.FirstOrDefault().Modelo.indiceEnfriamiento)
+        </th>
+        <th>
+            Capacidad disponible
         </th>
     </tr>
-
-    @foreach (var item in Model.recetas)
+    @foreach (var item in Model.refrigeradores)
     {
         <tr>
             <td>
-                @foreach (var pro in item.productosForReceta)
-                {
-                    <td>
-                        @Html.DisplayFor(modelitem => pro.Producto.nombre)
-                    </td>
-                }
+                @Html.DisplayFor(modelItem => item.codigo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.descripcion)
+                @Html.DisplayFor(modelItem => item.Modelo.capacidad) Lts.
             </td>
             <td>
-                @Html.ActionLink("Añadir producto de receta", "Create", "ProductForRecetas", new { id = item.id }, null)|
-                @Html.ActionLink("Editar receta", "Edit", "Recetas", new { id = item.id }, null)|
-                @Html.ActionLink("Borrar", "Delete", "Recetas", new { id = item.id }, null)
+                @Html.DisplayFor(modelItem => item.Modelo.indiceEnfriamiento) ^C
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.capacidad_restante) Lts.
+            </td>
+            <td>
+                @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, null) |
+                @Html.ActionLink("Listar Paquete", "Index", "Paquetes", new { id = item.id }, null) |
+                @Html.ActionLink("Ver mi refri", "Details", "Refrigeradores", new { id = item.id }, null) |
+                @Html.ActionLink("Eliminar", "Delete", "Refrigeradores", new { id = item.id }, null)|
+                @Html.ActionLink("Canasta basica", "Index", "CanastaBasica", new { id = item.id }, null)|
+                @Html.ActionLink("Crear canasta", "Create", "CanastaBasica", new { id = item.id }, null)
             </td>
         </tr>
     }
 </table>
+<p>
+    @Html.ActionLink("Add receta", "Create", "Recetas")
+</p>
+<br />
 
+@foreach (var item in Model.recetas)
+{
+    <div class="col-md-6">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.recetas.FirstOrDefault().productos)
+                </th>
+            </tr>
+            <div>
+                <div class="col-md-6">
+                    <p>Descripcion:</p>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </div>
+                <div class="col-md-6">
+                    @Html.ActionLink("Añadir producto de receta", "CreateForReceta", "ProductForRecetas", new { id = item.id }, null) <br />
+                    @Html.ActionLink("Editar receta", "Edit", "Recetas", new { id = item.id }, null) <br />
+                    @Html.ActionLink("Borrar", "Delete", "Recetas", new { id = item.id }, null) <br />
+                </div>
 
+                @foreach (var pro in item.productosForReceta)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelitem => pro.Producto.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelitem => pro.Producto.codigo)
+                        </td>
+                    </tr>
+                }
+            </div>
+
+        </table>
+    </div>
+}
 

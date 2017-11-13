@@ -66,7 +66,7 @@ namespace Gazorpgazorpfridge.Controllers
         public ActionResult CreateForReceta(int? id)
         {
             ViewBag.receta = db.Recetas.Find(id);
-            ViewBag.productoId = new SelectList(db.Productos, "id", "codigo");
+            ViewBag.productoId = new SelectList(db.Productos, "id", "nombre");
             ViewBag.recetaId = new SelectList(db.Recetas, "id", "descripcion");
             return View();
         }
@@ -82,7 +82,7 @@ namespace Gazorpgazorpfridge.Controllers
             {
                 db.ProductForRecetas.Add(productForReceta);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.productoId = new SelectList(db.Productos, "id", "codigo", productForReceta.productoId);
@@ -118,7 +118,7 @@ namespace Gazorpgazorpfridge.Controllers
             {
                 db.Entry(productForReceta).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             ViewBag.productoId = new SelectList(db.Productos, "id", "codigo", productForReceta.productoId);
             ViewBag.recetaId = new SelectList(db.Recetas, "id", "descripcion", productForReceta.recetaId);
@@ -148,7 +148,7 @@ namespace Gazorpgazorpfridge.Controllers
             ProductForReceta productForReceta = db.ProductForRecetas.Find(id);
             db.ProductForRecetas.Remove(productForReceta);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         protected override void Dispose(bool disposing)
