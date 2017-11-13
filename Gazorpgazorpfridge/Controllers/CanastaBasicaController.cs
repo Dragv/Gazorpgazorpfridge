@@ -10,15 +10,15 @@ using Gazorpgazorpfridge.Models;
 
 namespace Gazorpgazorpfridge.Controllers
 {
-    public class CanastaBasicasController : Controller
+    public class CanastaBasicaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: CanastaBasicas
         public ActionResult Index(int? id)
         {
-            var refri = db.Refrigeradores.Where(u => u.id == id).FirstOrDefault();
-            return View(refri.micanasta);
+            var canasta = db.CanastasBasicas.Where(u => u.id == id).FirstOrDefault();
+            return View(canasta);
         }
 
         // GET: CanastaBasicas/Details/5
@@ -37,8 +37,9 @@ namespace Gazorpgazorpfridge.Controllers
         }
 
         // GET: CanastaBasicas/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
+            ViewBag.refri = db.Refrigeradores.Find(id);
             return View();
         }
 
@@ -47,10 +48,11 @@ namespace Gazorpgazorpfridge.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,descripcion,perEscasez")] CanastaBasica canastaBasica)
+        public ActionResult Create([Bind(Include = "id,descripcion,perEscasez,refriId")] CanastaBasica canastaBasica)
         {
             if (ModelState.IsValid)
             {
+                //db.Refrigeradores.Where(u => u.id == refid).FirstOrDefault().micanasta = canastaBasica;
                 db.CanastasBasicas.Add(canastaBasica);
                 db.SaveChanges();
                 return RedirectToAction("Index","Home");
