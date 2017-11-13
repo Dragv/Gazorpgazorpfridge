@@ -14,7 +14,7 @@ namespace Gazorpgazorpfridge.Models
 
         public virtual ICollection<Producto> productos { get; set; }
 
-        public virtual ICollection<CanastaBasica> canastabasica { get; set; }
+        public virtual ICollection<ProductForCanasta> productForCanasta { get; set; }
 
         public string descripcion { get; set; }
 

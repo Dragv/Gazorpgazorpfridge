@@ -302,6 +302,10 @@
     <Compile Include="Migrations\201711131837072_Canasta_Foreign.Designer.cs">
       <DependentUpon>201711131837072_Canasta_Foreign.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711131931496_Oops.cs" />
+    <Compile Include="Migrations\201711131931496_Oops.Designer.cs">
+      <DependentUpon>201711131931496_Oops.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -315,6 +319,7 @@
     <Compile Include="Models\ProductForReceta.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Receta.cs" />
+    <Compile Include="Models\RefriDetailsViewModel.cs" />
     <Compile Include="Models\Refrigerador.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -510,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711131837072_Canasta_Foreign.resx">
       <DependentUpon>201711131837072_Canasta_Foreign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711131931496_Oops.resx">
+      <DependentUpon>201711131931496_Oops.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
