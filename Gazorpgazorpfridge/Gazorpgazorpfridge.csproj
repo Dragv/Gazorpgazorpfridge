@@ -281,6 +281,14 @@
     <Compile Include="Migrations\201711120705341_just_in_case.Designer.cs">
       <DependentUpon>201711120705341_just_in_case.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711122153597_Added_user_reference_to_receta.cs" />
+    <Compile Include="Migrations\201711122153597_Added_user_reference_to_receta.Designer.cs">
+      <DependentUpon>201711122153597_Added_user_reference_to_receta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711122353452_ProductForReceta.cs" />
+    <Compile Include="Migrations\201711122353452_ProductForReceta.Designer.cs">
+      <DependentUpon>201711122353452_ProductForReceta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -290,6 +298,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\Paquete.cs" />
+    <Compile Include="Models\ProductForReceta.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Receta.cs" />
     <Compile Include="Models\Refrigerador.cs" />
@@ -467,6 +476,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711120705341_just_in_case.resx">
       <DependentUpon>201711120705341_just_in_case.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711122153597_Added_user_reference_to_receta.resx">
+      <DependentUpon>201711122153597_Added_user_reference_to_receta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711122353452_ProductForReceta.resx">
+      <DependentUpon>201711122353452_ProductForReceta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Gazorpgazorpfridge.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Gazorpgazorpfridge.Controllers
 {
@@ -52,6 +53,7 @@ namespace Gazorpgazorpfridge.Controllers
         {
             if (ModelState.IsValid)
             {
+                receta.applicationUser_id = User.Identity.GetUserId();
                 db.Recetas.Add(receta);
                 db.SaveChanges();
                 return RedirectToAction("Index");

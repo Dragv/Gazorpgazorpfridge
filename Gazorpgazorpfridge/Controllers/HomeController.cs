@@ -27,7 +27,13 @@ namespace Gazorpgazorpfridge.Controllers
             else
             {
                 var userID = User.Identity.GetUserId();
-                var toReturn = db.Refrigeradores.Where(u => u.applicationUser_id == userID).ToList();
+                var refrigeradores = db.Refrigeradores.Where(u => u.applicationUser_id == userID).ToList();
+                var recetas = db.Recetas.Where(u => u.applicationUser_id == userID).ToList();
+                var toReturn = new UserViewModel
+                {
+                    refrigeradores = refrigeradores,
+                    recetas = recetas
+                };
                 ViewBag.errMsg = TempData["ErrorMessage"] as string;
                 
                 if(toReturn != null)
