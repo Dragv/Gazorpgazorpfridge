@@ -45,7 +45,9 @@
                 @Html.ActionLink("Listar Paquete", "Index", "Paquetes", new { id = item.id }, new { @class = "btn btn-warning" })
                 @Html.ActionLink("Ver mi refri", "Details", "Refrigeradores", new { id = item.id }, new { @class = "btn btn-warning" })
                 @Html.ActionLink("Eliminar", "Delete", "Refrigeradores", new { id = item.id }, new { @class = "btn btn-warning" })
-                @Html.ActionLink("Canasta basica", "Index", "CanastaBasica", new { id = item.id }, new { @class = "btn btn-warning" })
+                @*
+    @Html.ActionLink("Canasta basica", "Index", "CanastaBasica", new { id = item.id }, new { @class = "btn btn-warning" })
+                *@
                 @Html.ActionLink("Crear canasta", "Create", "CanastaBasica", new { id = item.id }, new { @class = "btn btn-warning" })
             </td>
         </tr>
