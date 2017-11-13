@@ -73,10 +73,10 @@
     {
         <tr>
             <td>
-                @foreach (var pro in item.productos)
+                @foreach (var pro in item.productosForReceta)
                 {
                     <td>
-                        @Html.DisplayFor(modelitem => pro.nombre)
+                        @Html.DisplayFor(modelitem => pro.Producto.nombre)
                     </td>
                 }
             </td>
@@ -84,6 +84,7 @@
                 @Html.DisplayFor(modelItem => item.descripcion)
             </td>
             <td>
+                @Html.ActionLink("Añadir producto de receta", "Create", "ProductForRecetas", new { id = item.id }, null)|
                 @Html.ActionLink("Editar receta", "Edit", "Recetas", new { id = item.id }, null)|
                 @Html.ActionLink("Borrar", "Delete", "Recetas", new { id = item.id }, null)
             </td>
