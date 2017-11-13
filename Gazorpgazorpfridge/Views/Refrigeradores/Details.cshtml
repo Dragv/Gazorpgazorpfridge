@@ -72,10 +72,10 @@
                 @Html.DisplayFor(model => model.micanasta.perEscasez)
             </dd>
         }
-        @Html.ActionLink("Editar canasta básica", "../CanastaBasica/Edit")
+        @Html.ActionLink("Editar canasta básica", "../CanastaBasica/Edit", null, new { @class = "btn btn-default" })
     </dl>
 </div>
 <p>
     @* @Html.ActionLink("Edit", "Edit", new { id = Model.id }) | *@
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default" })
 </p>

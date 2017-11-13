@@ -6,8 +6,9 @@
 <br />
 
 @* Table for fridges owned by the user *@
+<h3>Mis Refris</h3>
 <p>
-    @Html.ActionLink("Add refri", "Create", "Refrigeradores")
+    @Html.ActionLink("Add refri", "Create", "Refrigeradores", null, new { @class = "btn btn-warning" })
 </p>
 <table class="table">
     <tr>
@@ -39,42 +40,55 @@
             <td>
                 @Html.DisplayFor(modelItem => item.capacidad_restante) Lts.
             </td>
-            <td>
-                @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, null) |
-                @Html.ActionLink("Listar Paquete", "Index", "Paquetes", new { id = item.id }, null) |
-                @Html.ActionLink("Ver mi refri", "Details", "Refrigeradores", new { id = item.id }, null) |
-                @Html.ActionLink("Eliminar", "Delete", "Refrigeradores", new { id = item.id }, null)|
-                @Html.ActionLink("Canasta basica", "Index", "CanastaBasica", new { id = item.id }, null)|
-                @Html.ActionLink("Crear canasta", "Create", "CanastaBasica", new { id = item.id }, null)
+            <td class="btn-group-justified">
+                @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Listar Paquete", "Index", "Paquetes", new { id = item.id }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Ver mi refri", "Details", "Refrigeradores", new { id = item.id }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Eliminar", "Delete", "Refrigeradores", new { id = item.id }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Canasta basica", "Index", "CanastaBasica", new { id = item.id }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Crear canasta", "Create", "CanastaBasica", new { id = item.id }, new { @class = "btn btn-warning" })
             </td>
         </tr>
     }
 </table>
+<h3>Mis Recetas</h3>
 <p>
-    @Html.ActionLink("Add receta", "Create", "Recetas")
+    @Html.ActionLink("Add receta", "Create", "Recetas", null, new { @class = "btn btn-success" })
 </p>
 <br />
+@{int count = 0; }
 
 @foreach (var item in Model.recetas)
 {
-    <div class="col-md-6">
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.recetas.FirstOrDefault().productos)
-                </th>
-            </tr>
-            <div>
-                <div class="col-md-6">
-                    <p>Descripcion:</p>
-                    @Html.DisplayFor(modelItem => item.descripcion)
-                </div>
-                <div class="col-md-6">
-                    @Html.ActionLink("Añadir producto de receta", "CreateForReceta", "ProductForRecetas", new { id = item.id }, null) <br />
-                    @Html.ActionLink("Editar receta", "Edit", "Recetas", new { id = item.id }, null) <br />
-                    @Html.ActionLink("Borrar", "Delete", "Recetas", new { id = item.id }, null) <br />
-                </div>
-
+    if (count % 2 == 0)
+    {
+        @:<div class="row">
+    }
+        <div class="col-md-6">
+            <table class="table">
+                <tr>
+                    <th>
+                        Descripcion:
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descripcion)
+                    </td>
+                    <div class="btn-group-justified">
+                        @Html.ActionLink("Agregar ingrediente", "CreateForReceta", "ProductForRecetas", new { id = item.id }, new { @class = "btn btn-success" })
+                    
+                        @Html.ActionLink("Editar receta", "Edit", "Recetas", new { id = item.id }, new { @class = "btn btn-success" })
+                  
+                        @Html.ActionLink("Borrar", "Delete", "Recetas", new { id = item.id }, new { @class = "btn btn-success" })
+                    </div>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.recetas.FirstOrDefault().productos)
+                    </th>
+                    <th>
+                        Product Id
+                    </th>
+                </tr>
                 @foreach (var pro in item.productosForReceta)
                 {
                     <tr>
@@ -86,9 +100,14 @@
                         </td>
                     </tr>
                 }
-            </div>
-
-        </table>
-    </div>
+            </table>
+        </div>
+    if (count % 2 != 0)
+    {
+        @:</div>
+        @:<br />
+        @:<br />
+    }
+    count++;
 }
 
