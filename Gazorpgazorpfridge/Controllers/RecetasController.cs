@@ -86,7 +86,8 @@ namespace Gazorpgazorpfridge.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(receta).State = EntityState.Modified;
+                var current_receta = db.Recetas.Where(u => u.id == receta.id).FirstOrDefault();
+                current_receta.descripcion = receta.descripcion;
                 db.SaveChanges();
                 return RedirectToAction("Index", "Home");
             }
