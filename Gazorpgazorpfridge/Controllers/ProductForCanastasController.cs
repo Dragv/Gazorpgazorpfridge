@@ -36,36 +36,12 @@ namespace Gazorpgazorpfridge.Controllers
             return View(productForCanasta);
         }
 
-        // GET: ProductForCanastas/Create
-        public ActionResult Create()
-        {
-            ViewBag.canastaId = new SelectList(db.CanastasBasicas, "id", "descripcion");
-            ViewBag.productoId = new SelectList(db.Productos, "id", "codigo");
-            return View();
-        }
-
-        // POST: ProductForCanastas/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,canastaId,productoId")] ProductForCanasta productForCanasta)
-        {
-            if (ModelState.IsValid)
-            {
-                db.ProductForCanastas.Add(productForCanasta);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.canastaId = new SelectList(db.CanastasBasicas, "id", "descripcion", productForCanasta.canastaId);
-            ViewBag.productoId = new SelectList(db.Productos, "id", "codigo", productForCanasta.productoId);
-            return View(productForCanasta);
-        }
 
         public ActionResult CreateForCanasta(int? id)
         {
             ViewBag.canasta = db.CanastasBasicas.Find(id);
+            ViewBag.canasta_id = ViewBag.canasta.id;
+            ViewBag.refri_id = ViewBag.canasta.refriId;
             ViewBag.canastaId = new SelectList(db.CanastasBasicas, "id", "descripcion");
             ViewBag.productoId = new SelectList(db.Productos, "id", "nombre");
             return View();
@@ -76,17 +52,17 @@ namespace Gazorpgazorpfridge.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateForCanasta([Bind(Include = "id,canastaId,productoId")] ProductForCanasta productForCanasta)
+        public ActionResult CreateForCanasta([Bind(Include = "id,canastaId,productoId,CantidadMaxima")] ProductForCanasta productForCanasta)
         {
             if (ModelState.IsValid)
             {
                 db.ProductForCanastas.Add(productForCanasta);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.canastaId = new SelectList(db.CanastasBasicas, "id", "descripcion", productForCanasta.canastaId);
-            ViewBag.productoId = new SelectList(db.Productos, "id", "codigo", productForCanasta.productoId);
+            ViewBag.productoId = new SelectList(db.Productos, "id", "nombre", productForCanasta.productoId);
             return View(productForCanasta);
         }
 

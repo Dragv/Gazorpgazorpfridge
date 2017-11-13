@@ -49,15 +49,6 @@
         @if (Model != null && Model.canastaBasica != null)
         {
             <dt>
-                @Html.DisplayNameFor(model => model.canastaBasica.productForCanasta)
-            </dt>
-            foreach (var item in Model.canastaBasica.productForCanasta)
-            {
-                <dd>
-                    @Html.DisplayFor(modelItem => item.Producto.nombre)
-                </dd>
-            }
-            <dt>
                 @Html.DisplayNameFor(model => model.canastaBasica.descripcion)
             </dt>
 
@@ -71,9 +62,28 @@
             <dd>
                 @Html.DisplayFor(model => model.canastaBasica.perEscasez)
             </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.canastaBasica.productForCanasta)
+            </dt>
+            foreach (var item in Model.canastaBasica.productForCanasta)
+            {
+                <dd>
+                    @Html.DisplayFor(modelItem => item.Producto.nombre)
+                </dd>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.CantidadMaxima)
+                </dd>
+            }
+            <br />
+            <br />
+            @Html.ActionLink("Añadir Producto", "CreateForCanasta", "ProductForCanastas", new { id = Model.canastaBasica.id }, new { @class = "btn btn-default" })
+            @Html.ActionLink("Editar canasta básica", "../CanastaBasica/Edit", new { id = Model.canastaBasica.id }, new { @class = "btn btn-default" })
         }
-        @Html.ActionLink("Añadir Producto", "CreateForCanasta", "ProductForCanastas", new { id = Model.canastaBasica.id }, new { @class = "btn btn-default" })
-        @Html.ActionLink("Editar canasta básica", "../CanastaBasica/Edit", new { id = Model.canastaBasica.id }, new { @class = "btn btn-default" })
+        else
+        {
+            <h3>No tienes definida una canasta</h3>
+            @Html.ActionLink("Crear canasta", "Create", "CanastaBasica", new { id = Model.refrigerador.id }, new { @class = "btn btn-warning" })
+        }
     </dl>
 </div>
 <p>

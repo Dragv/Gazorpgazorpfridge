@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net.Mail;
+using System.Net;
 
 namespace Gazorpgazorpfridge.Controllers
 {
@@ -35,7 +37,35 @@ namespace Gazorpgazorpfridge.Controllers
                     recetas = recetas
                 };
                 ViewBag.errMsg = TempData["ErrorMessage"] as string;
-                
+
+                foreach (var item in refrigeradores)
+                {
+                    foreach (var pack in db.Paquetes.Where(u => u.refriId == item.id).ToList())
+                    {
+                        if (pack.caducidad < System.DateTime.Now)
+                        {
+                            MailMessage mailMessage = new MailMessage();
+                            mailMessage.From = new MailAddress("gazorpgazor@gmail.com");
+                            string currentUserId = User.Identity.GetUserId();
+                            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+                            mailMessage.To.Add(currentUser.Email);
+                            mailMessage.Subject = $"Se caduco un producto de tu refri {item.codigo}";
+                            mailMessage.Body = $"Se caduco el productp {pack.Producto.nombre}, el dia {pack.caducidad}";
+
+                            SmtpClient smtp = new SmtpClient();
+
+                            smtp.Host = "smtp.gmail.com";
+                            smtp.Port = 587;
+                            smtp.EnableSsl = true;
+                            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            smtp.UseDefaultCredentials = false;
+                            smtp.Credentials = new NetworkCredential("gazorpgazor", "Hermes_69");
+
+                            smtp.Send(mailMessage);
+                        }
+                    }
+                }
+
                 if(toReturn != null)
                 {
                     return View(toReturn);

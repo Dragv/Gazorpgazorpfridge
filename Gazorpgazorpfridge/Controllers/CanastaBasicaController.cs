@@ -81,7 +81,7 @@ namespace Gazorpgazorpfridge.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,descripcion,perEscasez")] CanastaBasica canastaBasica)
+        public ActionResult Edit([Bind(Include = "id,descripcion,perEscasez,refriId")] CanastaBasica canastaBasica)
         {
             if (ModelState.IsValid)
             {

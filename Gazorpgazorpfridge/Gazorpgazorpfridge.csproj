@@ -307,6 +307,10 @@
     <Compile Include="Migrations\201711131931496_Oops.Designer.cs">
       <DependentUpon>201711131931496_Oops.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711132224429_Last_Migration_Maybe.cs" />
+    <Compile Include="Migrations\201711132224429_Last_Migration_Maybe.Designer.cs">
+      <DependentUpon>201711132224429_Last_Migration_Maybe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -521,6 +525,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711131931496_Oops.resx">
       <DependentUpon>201711131931496_Oops.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711132224429_Last_Migration_Maybe.resx">
+      <DependentUpon>201711132224429_Last_Migration_Maybe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
