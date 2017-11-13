@@ -32,11 +32,17 @@ namespace Gazorpgazorpfridge.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Refrigerador refrigerador = db.Refrigeradores.Find(id);
+            var canastaBasica = db.CanastasBasicas.Where(u => u.refriId == refrigerador.id).FirstOrDefault();
+            var toReturn = new RefriDetailsViewModel
+            {
+                refrigerador = refrigerador,
+                canastaBasica = canastaBasica
+            };
             if (refrigerador == null)
             {
                 return HttpNotFound();
             }
-            return View(refrigerador);
+            return View(toReturn);
         }
 
         // GET: Refrigeradores/Details/5
