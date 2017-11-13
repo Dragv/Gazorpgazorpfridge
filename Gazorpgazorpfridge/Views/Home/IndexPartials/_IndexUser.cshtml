@@ -48,7 +48,9 @@
                     @Html.ActionLink("Añadir Paquete", "CreateForRefri", "Paquetes", new { id = item.id }, null) |
                     @Html.ActionLink("Listar Paquete", "Index", "Paquetes", new { id = item.id }, null) | 
                     @Html.ActionLink("Ver mi refri", "Details", "Refrigeradores", new { id = item.id }, null) |
-                    @Html.ActionLink("Eliminar", "Delete", "Refrigeradores", new { id = item.id }, null)
+                    @Html.ActionLink("Eliminar", "Delete", "Refrigeradores", new { id = item.id }, null)|
+                    @Html.ActionLink("Canasta basica","Index","CanastaBasica", new { id = item.id }, null)|
+                    @Html.ActionLink("Crear canasta", "Create", "CanastaBasica", new { id = item.id }, null)
                 </td>
             </tr>
         }
@@ -87,7 +89,6 @@
             </td>
         </tr>
     }
-
 </table>
 
 

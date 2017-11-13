@@ -15,9 +15,10 @@ namespace Gazorpgazorpfridge.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: CanastaBasicas
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            return View(db.CanastasBasicas.ToList());
+            var refri = db.Refrigeradores.Where(u => u.id == id).FirstOrDefault();
+            return View(refri.micanasta);
         }
 
         // GET: CanastaBasicas/Details/5
@@ -52,7 +53,7 @@ namespace Gazorpgazorpfridge.Controllers
             {
                 db.CanastasBasicas.Add(canastaBasica);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
 
             return View(canastaBasica);
@@ -84,7 +85,7 @@ namespace Gazorpgazorpfridge.Controllers
             {
                 db.Entry(canastaBasica).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
             return View(canastaBasica);
         }
@@ -112,7 +113,7 @@ namespace Gazorpgazorpfridge.Controllers
             CanastaBasica canastaBasica = db.CanastasBasicas.Find(id);
             db.CanastasBasicas.Remove(canastaBasica);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
 
         protected override void Dispose(bool disposing)
