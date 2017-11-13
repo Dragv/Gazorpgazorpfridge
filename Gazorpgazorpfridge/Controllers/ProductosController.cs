@@ -95,7 +95,7 @@ namespace Gazorpgazorpfridge.Controllers
             {
                 db.Entry(producto).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View(producto);
         }
@@ -123,7 +123,7 @@ namespace Gazorpgazorpfridge.Controllers
             Producto producto = db.Productos.Find(id);
             db.Productos.Remove(producto);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         protected override void Dispose(bool disposing)
