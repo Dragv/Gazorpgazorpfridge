@@ -43,7 +43,7 @@ namespace Gazorpgazorpfridge.Controllers
         public ActionResult CreateForRefri(int? id)
         {
             ViewBag.refri = db.Refrigeradores.Where(u => u.id == id).FirstOrDefault();
-            ViewBag.productId = new SelectList(db.Productos, "id", "codigo");
+            ViewBag.productId = new SelectList(db.Productos, "id", "nombre");
             ViewBag.refriId = new SelectList(db.Refrigeradores, "id", "codigo");
             return View();
         }
@@ -73,7 +73,7 @@ namespace Gazorpgazorpfridge.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            ViewBag.productId = new SelectList(db.Productos, "id", "codigo", paquete.productId);
+            ViewBag.productId = new SelectList(db.Productos, "id", "nombre", paquete.productId);
             ViewBag.refriId = new SelectList(db.Refrigeradores, "id", "codigo", paquete.refriId);
             return View(paquete);
         }
