@@ -38,6 +38,50 @@ namespace Gazorpgazorpfridge.Controllers
                 };
                 ViewBag.errMsg = TempData["ErrorMessage"] as string;
 
+                // Check recetas availability
+                if (refrigeradores.Count > 0 && recetas.Count > 0)
+                {
+                    // Init dictionary
+                    Dictionary<int, bool> recetas_disp = new Dictionary<int, bool>();
+                    // Init productos globales
+                    ICollection<int> produc_disp = new List<int>();
+                    // Iterate over Refris
+                    foreach (var refri in refrigeradores)
+                    {
+                        var packs_refri = db.Paquetes.Where(u => u.refriId == refri.id).ToList();
+                        if (packs_refri != null)
+                        {
+                            foreach (var pack in packs_refri)
+                            {
+                                if (!produc_disp.Contains(pack.productId))
+                                {
+                                    produc_disp.Add(pack.productId);
+                                }
+                            }
+                        }
+                    }
+                    // Iterate over Recetas
+                    foreach (var rec in recetas)
+                    {
+                        bool complete = false;
+                        foreach (var product in rec.productosForReceta)
+                        {
+                            if (produc_disp.Contains(product.productoId))
+                            {
+                                complete = true;
+                            }
+                            else
+                            {
+                                complete = false;
+                                break;
+                            }
+                        }
+                        recetas_disp.Add(rec.id, complete);
+                    }
+                    ViewBag.rece_disp = recetas_disp;
+                }
+                // Check recetas availability end
+
                 foreach (var item in refrigeradores)
                 {
                     foreach (var pack in db.Paquetes.Where(u => u.refriId == item.id).ToList())

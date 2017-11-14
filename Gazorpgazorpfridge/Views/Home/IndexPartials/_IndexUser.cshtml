@@ -70,6 +70,21 @@
             <table class="table">
                 <tr>
                     <th>
+                        Disponible para hacer?
+                    </th>
+                    <td>
+                        @if (ViewBag.rece_disp[item.id])
+                        {
+                            <p>Disponible</p>
+                        }
+                        else
+                        {
+                            <p>Faltan Ingredientes</p>
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <th>
                         Descripcion:
                     </th>
                     <td>
