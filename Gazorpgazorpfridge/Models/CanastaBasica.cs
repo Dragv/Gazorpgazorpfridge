@@ -20,7 +20,9 @@ namespace Gazorpgazorpfridge.Models
         [Display(Name = "Descripcion")]
         public string descripcion { get; set; }
 
+
         [Display(Name = "Porcentaje de escasez")]
+        [Range(0.1, 1, ErrorMessage = "Cantidad debe ser entre 0.1 - 1.0")]
         public float perEscasez { get; set; }
 
         [ForeignKey("Refrigerador")]

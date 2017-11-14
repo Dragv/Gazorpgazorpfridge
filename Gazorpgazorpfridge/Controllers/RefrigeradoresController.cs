@@ -57,13 +57,20 @@ namespace Gazorpgazorpfridge.Controllers
 
                 if (productosAcabados.Count > 0)
                 {
+                    String product_left = "";
+                    for (int i = 0; i < productosAcabados.Count - 1; i++ )
+                    {
+                        product_left += productosAcabados.ElementAt(i) + ", ";
+                    }
+                    product_left += productosAcabados.ElementAt(productosAcabados.Count - 1);
+
                     MailMessage mailMessage = new MailMessage();
                     mailMessage.From = new MailAddress("gazorpgazor@gmail.com");
                     string currentUserId = User.Identity.GetUserId();
                     ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
                     mailMessage.To.Add("geratrex781@gmail.com");
                     mailMessage.Subject = $"Se esta acabando los productos siguientes de tu canasta basica";
-                    mailMessage.Body = $"Se estan acabando los productos {productosAcabados.ToString()}";
+                    mailMessage.Body = $"Se estan acabando los siguientes productos: {product_left}";
 
                     SmtpClient smtp = new SmtpClient();
 
