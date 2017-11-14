@@ -68,7 +68,7 @@ namespace Gazorpgazorpfridge.Controllers
                     mailMessage.From = new MailAddress("gazorpgazor@gmail.com");
                     string currentUserId = User.Identity.GetUserId();
                     ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-                    mailMessage.To.Add("geratrex781@gmail.com");
+                    mailMessage.To.Add(currentUser.Email);
                     mailMessage.Subject = $"Se esta acabando los productos siguientes de tu canasta basica";
                     mailMessage.Body = $"Se estan acabando los siguientes productos: {product_left}";
 
