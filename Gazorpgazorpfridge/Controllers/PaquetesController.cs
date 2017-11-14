@@ -72,7 +72,7 @@ namespace Gazorpgazorpfridge.Controllers
                     string currentUserId = User.Identity.GetUserId();
                     ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
                     mailMessage.To.Add(currentUser.Email);
-                    mailMessage.Subject = $"Se te acaba el espacio Bro";
+                    mailMessage.Subject = $"Se te acaba el espacio Bro ... o Sistah";
                     mailMessage.Body = $"Se acaba el espacio de tu refri, esta a {current_refri.capacidad_restante - volumen_consumido} de capacidad";
 
                     SmtpClient smtp = new SmtpClient();
