@@ -94,7 +94,7 @@ namespace Gazorpgazorpfridge.Controllers
                             ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
                             mailMessage.To.Add(currentUser.Email);
                             mailMessage.Subject = $"Se caduco un producto de tu refri {item.codigo}";
-                            mailMessage.Body = $"Se caduco el productp {pack.Producto.nombre}, el dia {pack.caducidad}";
+                            mailMessage.Body = $"Se caducó el producto {pack.Producto.nombre}, el dia {pack.caducidad}";
 
                             SmtpClient smtp = new SmtpClient();
 
